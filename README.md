@@ -11,10 +11,10 @@ Move files or directories to any directory you've already been to
 
 ### To install
 
+NOTE: Zmove is currently unsupported on Windows
+
 - Install [zoxide](https://github.com/ajeetdsouza/zoxide)
 - Install [cargo](https://github.com/rust-lang/cargo) with ``curl https://sh.rustup.rs -sSf | sh``
-
-NOTE: Zmove is currently unsupported on Windows
 
 - Run ``cargo install zmv``
 
