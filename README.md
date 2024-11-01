@@ -2,7 +2,7 @@
 
 
 ### Description
-This package builds on zoxide to easily move files in your system. 
+This package builds on [zoxide](https://github.com/ajeetdsouza/zoxide) to easily move files in your system. 
 Move files or directories to any directory you've already been to
 
 
@@ -12,7 +12,9 @@ Move files or directories to any directory you've already been to
 ### To install
 
 - Install [zoxide](https://github.com/ajeetdsouza/zoxide)
-- Install [cargo](curl https://sh.rustup.rs -sSf | sh)
+- Install [cargo](https://github.com/rust-lang/cargo) with ``curl https://sh.rustup.rs -sSf | sh``
+
+NOTE: Zmove is currently unsupported on Windows
 
 - Run ``cargo install zmv``
 
