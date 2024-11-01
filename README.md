@@ -18,6 +18,13 @@ NOTE: Zmove is currently unsupported on Windows
 
 - Run ``cargo install zmove``
 
+### Installing manually
+
+- Install [zoxide](https://github.com/ajeetdsouza/zoxide)
+- Install [cargo](https://github.com/rust-lang/cargo) with ``curl https://sh.rustup.rs -sSf | sh``
+- clone the repository at (zmove)[https://github.com/korkie9/zmove]
+- Build with ``cargo build --release`` and find executable in release folder
+
 
 ### To use
 
