@@ -16,7 +16,7 @@ NOTE: Zmove is currently unsupported on Windows
 - Install [zoxide](https://github.com/ajeetdsouza/zoxide)
 - Install [cargo](https://github.com/rust-lang/cargo) with ``curl https://sh.rustup.rs -sSf | sh``
 
-- Run ``cargo install zmv``
+- Run ``cargo install zmove``
 
 
 ### To use
