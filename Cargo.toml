@@ -1,9 +1,15 @@
 [package]
-name = "zmv"
+name = "zmove"
 version = "0.1.0"
 edition = "2021"
 description = "Move files in the command line with ease"
 authors = ["Justin Korkie justinjkorkie@gmail.com"]
 license = "MIT OR Apache-2.0"
+readme = "README.md"
 
 [dependencies]
+
+
+[[bin]]
+name = "zmv"
+path = "src/main.rs"   
