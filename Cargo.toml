@@ -1,8 +1,9 @@
 [package]
-name = "zmove"
+name = "zmv"
 version = "0.1.0"
 edition = "2021"
 description = "Move files in the command line with ease"
+authors = ["Justin Korkie justinjkorkie@gmail.com"]
 license = "MIT OR Apache-2.0"
 
 [dependencies]
