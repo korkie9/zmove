@@ -9,6 +9,9 @@ Move files or directories to any directory you've already been to
 ### Dependencies
  - [zoxide](https://github.com/ajeetdsouza/zoxide)
 
+
+NOTE: Support has been added for Zmove on Windows but it is currently untested on Windows
+
 ### To install
 
 - Install [zoxide](https://github.com/ajeetdsouza/zoxide)
