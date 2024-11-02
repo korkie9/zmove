@@ -4,7 +4,8 @@ use std::process::Command;
 fn main() {
     let args: Vec<String> = env::args().collect();
     if args.len() != 3 {
-        panic!("Zmove expects 2 arguments");
+        print!("Zmove expects 2 arguments\n");
+        return;
     }
 
     let file_to_move = &args[1];
@@ -25,12 +26,13 @@ fn main() {
             .arg(mv_cmd_string)
             .output()
             .expect("failed to return to original directory");
-        println!("Moved {} to {}\n", file_to_move, dir_to_move_to);
 
-        if !mv_cmd.status.success() {
-            panic!("File not recognized");
+        if mv_cmd.status.success() {
+            println!("Moved {} to {}\n", file_to_move, dir_to_move_to);
+        } else {
+            print!("File not recognized\n");
         }
     } else {
-        panic!("Path not recognized");
+        print!("Path not recognized\n");
     }
 }
