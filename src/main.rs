@@ -20,7 +20,11 @@ fn main() {
     let dir_to_move_to = String::from_utf8_lossy(&move_to_dir_cmd.stdout);
 
     if move_to_dir_cmd.status.success() {
-        let mv_cmd_string = format!("mv {} {}", file_to_move.trim(), dir_to_move_to);
+        let mv_cmd_string = if cfg!(target_os = "windows") {
+            format!("move {} {}", file_to_move.trim(), dir_to_move_to)
+        } else {
+            format!("mv {} {}", file_to_move.trim(), dir_to_move_to)
+        };
         let mv_cmd = Command::new("sh")
             .arg("-c")
             .arg(mv_cmd_string)
