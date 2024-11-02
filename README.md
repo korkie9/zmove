@@ -23,7 +23,7 @@ NOTE: Support has been added for Zmove on Windows but it is currently untested o
 
 - Install [zoxide](https://github.com/ajeetdsouza/zoxide)
 - Install [cargo](https://github.com/rust-lang/cargo)
-- clone the repository at [zmove][https://github.com/korkie9/zmove]
+- clone the repository at [zmove](https://github.com/korkie9/zmove)
 - Build with ``cargo build --release`` and find executable in release folder
 
 
