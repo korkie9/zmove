@@ -1,8 +1,7 @@
 ## Zmove allows for seamless file moving 
 
-
 ### Description
-This package builds on [zoxide](https://github.com/ajeetdsouza/zoxide) to easily move files in your system. 
+This package builds on [zoxide](https://github.com/ajeetdsouza/zoxide) and ``mv`` shell command (``move`` for Windows) to easily move files in your system.
 Move files or directories to any directory you've already been to
 
 
@@ -27,10 +26,17 @@ NOTE: Support has been added for Zmove on Windows but it is currently untested o
 - Build with ``cargo build --release`` and find executable in release folder
 
 
-### To use
+### How to use
 
-Run ``zmv <file name> <path>``
+To move a single file or directories: ``zmv <file name> <target directory>``
+
+To move multiple file or directories: ``zmv *.<extension if file has one> <target directory>``
+To move multiple file or directories: ``zmv <path (optional)>/*.<extension if file has one> <target directory>``
+To move all file or directories: ``zmv <path (optional)>/*.* <target directory>``
 
 
-Eg. If you have a directory called foobar and you want to move example.txt into it, you could run ``zmv example.txt foobar`` or even just ``zmv example.txt bar`` and full directory path will be inferred giving that the user has visited it before.
+Eg. If you have a directory called foobar and you want to move example.txt into it, you could run ``zmv example.txt foobar`` or even just ``zmv example.txt bar`` and full directory path will be inferred giving that the user has visited it before or if foobar exists in current directory.
+
+Eg. If you would like to move multiple files to another directory, run ``zmv *.txt bar`` or ``zmv foo/*.txt bar`` or ``zmv ./* bar``
+
 
