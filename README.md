@@ -43,6 +43,8 @@ Eg. If you have a directory called foobar and you want to move example.txt into 
 
 Eg. If you would like to move multiple files to another directory, run ``zmv *.txt bar`` or ``zmv foo/*.txt bar`` or ``zmv ./* bar``
 
+### Related projects
+- [zcopy](https://crates.io/crates/zcopy)
 
 ### Contribute
 - Feel free to raise issues and make pull requests at ``https://github.com/korkie9/zmove``
