@@ -8,15 +8,20 @@ pub fn check_if_file_exists(dir_to_move_to: &str, files_to_move: &[String]) -> b
     // Check if the file exists
     let mut file_exists = false;
     for (_, file_name) in files_to_move.iter().enumerate() {
-        let path = Path::new(&dir_to_move_to.to_string()).join(file_name);
+        let filename: String = file_name
+            .chars()
+            .skip(1)
+            .take(file_name.len() - 2)
+            .collect();
+        let path = Path::new(&dir_to_move_to.to_string()).join(filename.clone());
         if path.metadata().is_ok() && path.is_file() {
-            println!("{} already exists in this folder", file_name);
+            println!("{} already exists in this folder", filename);
             file_exists = true;
         }
     }
     let mut input = String::new();
     if file_exists {
-        println!("You have one or more files that already exist in this folder. Would you like to overwrite? y/N");
+        println!("Would you like to overwrite? y/N");
         match io::stdin().read_line(&mut input) {
             Ok(_) => {
                 if input.trim() == "y" {
