@@ -1,10 +1,16 @@
+use crate::file_checker::check_if_file_exists;
 use std::process::Command;
 
 pub fn check_and_move_from_current_dir(
-    destination: &str,
+    destination: &String,
     files_to_move_as_string: &String,
     files_to_move: &[String],
 ) -> bool {
+    // Check if the file exists
+    let file_exists = check_if_file_exists(destination, files_to_move);
+    if file_exists {
+        return true;
+    }
     // Check if current directory exists
     let list_to_check_cmd_string = if cfg!(target_os = "windows") {
         "dir"
@@ -36,7 +42,7 @@ pub fn check_and_move_from_current_dir(
             .output()
             .expect("An issue occured when moving the files");
         if move_to_dir_cmd.status.success() {
-            println!("Moved {:?} to {}\n", files_to_move, destination);
+            println!("Moved {} to {}\n", files_to_move_as_string, destination);
         } else {
             print!("File not recognized\n");
         }

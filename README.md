@@ -1,4 +1,4 @@
-## Zmove allows for seamless file moving 
+## Zmove allows for seamless file moving in the terminal
 
 ### Description
 This package builds on [zoxide](https://github.com/ajeetdsouza/zoxide) and ``mv`` shell command (``move`` for Windows) to easily move files in your system.
@@ -17,6 +17,8 @@ NOTE: Support has been added for Zmove on Windows but it is currently untested o
 - Install [cargo](https://github.com/rust-lang/cargo) with ``curl https://sh.rustup.rs -sSf | sh``
 
 - Run ``cargo install zmove``
+
+- Run ``zmv --version`` to verify installation
 
 ### Installing manually
 
@@ -42,3 +44,5 @@ Eg. If you have a directory called foobar and you want to move example.txt into 
 Eg. If you would like to move multiple files to another directory, run ``zmv *.txt bar`` or ``zmv foo/*.txt bar`` or ``zmv ./* bar``
 
 
+### Contribute
+- Feel free to raise issues and make pull requests at ``https://github.com/korkie9/zmove``
