@@ -6,11 +6,6 @@ pub fn check_and_move_from_current_dir(
     files_to_move_as_string: &String,
     files_to_move: &[String],
 ) -> bool {
-    // Check if the file exists
-    let file_exists = check_if_file_exists(destination, files_to_move);
-    if file_exists {
-        return true;
-    }
     // Check if current directory exists
     let list_to_check_cmd_string = if cfg!(target_os = "windows") {
         "dir"
@@ -26,6 +21,11 @@ pub fn check_and_move_from_current_dir(
 
     //Move files if current directory exists
     if string_to_check.contains(destination) {
+        // Check if the file exists
+        let file_exists = check_if_file_exists(destination, files_to_move);
+        if file_exists {
+            return true;
+        }
         let platform_cmd = if cfg!(target_os = "windows") {
             "move"
         } else {
