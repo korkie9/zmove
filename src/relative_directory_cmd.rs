@@ -24,10 +24,11 @@ pub fn check_and_move_from_relative_dir(
     // Move file(s) to specified zoxide directory
     if move_to_dir_cmd.status.success() {
         let mv_cmd_string = if cfg!(target_os = "windows") {
-            format!("move {} {}", files_to_move_as_string, dir_to_move_to)
+            format!("move {} '{}'", files_to_move_as_string, dir_to_move_to)
         } else {
-            format!("mv {} {}", files_to_move_as_string, dir_to_move_to)
+            format!("mv {} '{}'", files_to_move_as_string, dir_to_move_to)
         };
+
         let mv_cmd = Command::new("sh")
             .arg("-c")
             .arg(mv_cmd_string)

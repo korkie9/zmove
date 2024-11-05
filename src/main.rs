@@ -34,7 +34,7 @@ fn main() {
     let destination: String;
     match set_destination(args[&args.len() - 1].clone()) {
         Some(dest) => {
-            destination = Some(dest).unwrap();
+            destination = format!("'{}'", Some(dest).unwrap());
         }
         None => {
             return;
