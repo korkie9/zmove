@@ -13,8 +13,8 @@ pub fn check_if_file_exists(dir_to_move_to: &str, files_to_move: &[String]) -> b
             .skip(1)
             .take(file_name.len() - 2)
             .collect();
-        let path = Path::new(&dir_to_move_to.to_string()).join(filename.clone());
-        if path.metadata().is_ok() && path.is_file() {
+        let path = Path::new(&dir_to_move_to.to_string().trim()).join(filename.clone().trim());
+        if path.metadata().is_ok() && (path.is_file() || path.is_dir()) {
             println!("{} already exists in this folder", filename);
             file_exists = true;
         }
