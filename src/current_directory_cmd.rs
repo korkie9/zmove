@@ -20,7 +20,7 @@ pub fn check_and_move_from_current_dir(
     let string_to_check = String::from_utf8_lossy(&list_to_check_cmd.stdout);
 
     //Move files if current directory exists
-    if string_to_check.contains(destination) {
+    if string_to_check.contains(&destination[1..destination.len() - 1]) {
         // Check if the file exists
         let file_exists = check_if_file_exists(destination, files_to_move);
         if file_exists {
